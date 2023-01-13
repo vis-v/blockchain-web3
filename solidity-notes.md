@@ -1,6 +1,6 @@
 # Solidity Notes
 
-Hey there! I'm excited to share my knowledge of Solidity with you. I'll explain the common data types some important concepts that you'll come across while writing smart contracts on Ethereum. I'll be assuming that you have a basic understanding of programming and data types, and be providing detailed explanations for some specific topics that I wish I had known when I first started learning Solidity. 
+Hey there! I'm excited to share my knowledge of Solidity with you. I'll explain the common data types and some really important concepts that you'll come across while writing smart contracts on Ethereum. I'll be assuming that you have a basic understanding of programming and data types, and be providing detailed explanations for some specific topics that I wish I had known when I first started learning Solidity. 
 
 ## int and uint256
 -  The ``uint256`` data type in Solidity represents an unsigned 256-bit integer, and the range of possible values for this data type is from 0 to 2^256 - 1 (that is 0 to 115,792,089,237,316,195,423,570,985,008,687,907,853,269,984,665,640,564,039,457,584,007,913,129,639,935. Hadn't I have added the commas, your brain would have overlooked the humongousnous of the number!).
