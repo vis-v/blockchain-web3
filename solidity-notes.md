@@ -28,13 +28,14 @@ unchecked {x--;}
 ## keccak256(abi.encodePacked()) for string comparison
 - You are not comparing the original string anymore, you are comparing the hash of the string.
 - The Keccak-256 hashing algorithm can be used to generate a fixed-size, deterministic output (a hash) from an input of any size. 
-- When used in combination with the Ethereum ABI (Application Binary Interface) encoding function encodePacked(), it can be used to compare strings in a way that is resistant to certain types of tampering and data corruption. 
+- When used in combination with the Ethereum ABI (Application Binary Interface) encoding function `encodePacked()`, it can be used to compare strings in a way that is resistant to certain types of tampering and data corruption. 
 - The ABI encoding function takes a variable-length argument and converts it into a fixed-length byte array, and the Keccak-256 hash function is applied to the result, creating a unique hash of the input string. 
 - This can be useful for comparing strings in a smart contract or other application, because it ensures that the input is unchanged and it can also save space on the blockchain.
 
 ## don't convert Strings to Bytes to find length
 - Strings are a sequence of characters, in Ethereum smart contracts, they are typically encoded in UTF-8.
-- UTF-8 is a variable-width encoding, which means that different characters may be represented by different numbers of bytes. Some characters in a string may be represented by 2 bytes, while others may be represented by 1 byte.
+- UTF-8 is a variable-width encoding, which means that different characters may be represented by different numbers of bytes. 
+- Some characters in a string may be represented by 2 bytes, while others may be represented by 1 byte.
 - Not every string can be converted into bytes to get the length of the string.
 - Keep in mind that the number of bytes used to represent the string may not be the same as the number of characters in the string.
 
@@ -49,3 +50,14 @@ function getBalance(address _addr) public view returns (uint) {
     return _addr.balance;
 }
 ```
+
+## msg - the special global variable
+
+- msg.sender: The address of the account that sent the message/transaction.
+- msg.address: The address of the contract that is currently executing.
+- msg.value: The value (in wei) that was sent along with the message/transaction.
+- msg.data: The data payload of the current message, it's a bytes variable that contains the data that was sent with the message call.
+- msg.gas: The amount of gas that was sent along with the message/transaction.
+- msg.sig: The signature of the message/transaction.
+- msg.gasprice: The gas price (in wei) that was sent along with the message/transaction.
+- msg.origin: The original sender of the message/transaction.
